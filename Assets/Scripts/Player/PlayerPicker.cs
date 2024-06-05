@@ -9,7 +9,7 @@ public class PlayerPicker : MonoBehaviour
     {
         if (collision.TryGetComponent<IPickable>(out var pickable))
         {
-
+            pickable.PickUp(gameObject);
         }
     }
 }

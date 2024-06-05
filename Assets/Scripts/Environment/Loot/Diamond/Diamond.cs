@@ -14,7 +14,7 @@ public class Diamond : MonoBehaviour, IPickable
         _diamondPicked = diamondPicked;
     }
 
-    public void PickUp(MonoBehaviour sender)
+    public void PickUp(GameObject sender)
     {
         OnDiamondPicked?.Invoke();
         _diamondPicked.InvokeDiamondPick();

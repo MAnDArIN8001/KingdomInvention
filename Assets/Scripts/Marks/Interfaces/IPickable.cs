@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IPickable
 {
-    public void PickUp(MonoBehaviour picker);
+    public void PickUp(GameObject picker);
 }
