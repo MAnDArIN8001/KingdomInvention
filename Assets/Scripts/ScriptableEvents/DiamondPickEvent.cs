@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DiamondPickEvent
+[CreateAssetMenu(fileName = "playerModel", menuName = "Gameplay/New PlayerModel")]
+public class DiamondPickEvent : ScriptableObject
 {
     public UnityEvent OnDiamondPicked;
 

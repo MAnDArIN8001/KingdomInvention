@@ -198,4 +198,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa62efa9e0934a4e935c81df1dafa30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lootVariants: []
