@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 4502368394320561955}
   - component: {fileID: 8310021842012036754}
   - component: {fileID: 2577207437333633670}
+  - component: {fileID: 8889659080184546271}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -265,6 +266,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canAttack: 1
   _damage: 1
-  _attackCooldown: 1.5
+  _attackCooldown: 1
   _attackRadius: 3
   _attackPosition: {fileID: 3826731004586716061}
+--- !u!114 &8889659080184546271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554346781802705364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d778957c0aa79834ea2e6055d7e97f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

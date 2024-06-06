@@ -14,6 +14,5 @@ public class BoxPeace : MonoBehaviour
 
         _rigidbody = GetComponent<Rigidbody2D>();
         _rigidbody.velocity = ProjectExpansions.GetRandomDirectionVector() * _startVelocity;
-        Debug.Log(ProjectExpansions.GetRandomDirectionVector());
     }
 }

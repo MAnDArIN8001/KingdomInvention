@@ -6,12 +6,13 @@ public class Diamond : MonoBehaviour, IPickable
 {
     public event Action OnDiamondPicked;
 
-    [SerializeField] private DiamondPickEvent _diamondPicked;
+    private DiamondPickEvent _diamondPicked;
 
     [Inject]
     private void Initialize(DiamondPickEvent diamondPicked)
     {
         _diamondPicked = diamondPicked;
+        Debug.Log(diamondPicked);
     }
 
     public void PickUp(GameObject sender)
