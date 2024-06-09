@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class HeartFactory : IHeartFactory
+public class HeartFactory : Factory.IFactory<Heart>, IGenericFactory
 {
     private readonly DiContainer _container;
 
@@ -19,4 +19,6 @@ public class HeartFactory : IHeartFactory
 
         return prefab.GetComponent<Heart>();
     }
+
+    IPickable IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
 }

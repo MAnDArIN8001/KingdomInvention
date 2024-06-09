@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-public class DiamondFactory : IDiamondFactory
+public class DiamondFactory : Factory.IFactory<Diamond>, IGenericFactory
 {
     private readonly DiContainer _container;
 
@@ -18,4 +18,6 @@ public class DiamondFactory : IDiamondFactory
 
         return prefab.GetComponent<Diamond>();
     }
+
+    IPickable IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
 }

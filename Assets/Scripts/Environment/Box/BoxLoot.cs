@@ -1,16 +1,19 @@
 using UnityEngine;
 using Zenject;
+using Factory;
 
 public class BoxLoot : MonoBehaviour
 {
-    private IDiamondFactory _diamondFactory;
+    [SerializeField] private LootTypes[] _lootTypes;
+
+    private FactoryOfFactorys _factoryOfFactorys;
 
     private BoxHealth _health;
 
     [Inject]
-    private void Initialize(IDiamondFactory factory)
+    private void Initialize(FactoryOfFactorys factoryOfFactorys)
     {
-        _diamondFactory = factory;
+        _factoryOfFactorys = factoryOfFactorys;
     }
 
     private void Awake()
@@ -30,6 +33,10 @@ public class BoxLoot : MonoBehaviour
 
     private void GenerateRandomLoot()
     {
-        _diamondFactory.Create(transform.position, Quaternion.identity);
+        int randomIndex = UnityEngine.Random.Range(0, _lootTypes.Length);
+
+        IGenericFactory factory = _factoryOfFactorys.GetFactory(_lootTypes[randomIndex]);
+
+        factory.Create(transform.position, Quaternion.identity);
     }
 }
