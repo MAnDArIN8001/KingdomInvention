@@ -1,5 +1,7 @@
 public enum LootTypes
 {
     Diamond,
-    Heart
+    Heart,
+    ActiveBomb,
+    Bomb,
 }

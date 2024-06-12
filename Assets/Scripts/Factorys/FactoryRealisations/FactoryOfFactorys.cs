@@ -17,7 +17,6 @@ namespace Factory
             }
 
             _factories.Add(type, factory);
-            UnityEngine.Debug.Log($"{type} | {factory}");
         }
 
         public IGenericFactory GetFactory(LootTypes type)
