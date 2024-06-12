@@ -19,5 +19,5 @@ public class DiamondFactory : Factory.IFactory<Diamond>, IGenericFactory
         return prefab.GetComponent<Diamond>();
     }
 
-    IPickable IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
+    object IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
 }

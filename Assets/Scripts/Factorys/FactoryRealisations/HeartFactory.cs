@@ -20,5 +20,5 @@ public class HeartFactory : Factory.IFactory<Heart>, IGenericFactory
         return prefab.GetComponent<Heart>();
     }
 
-    IPickable IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
+    object IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
 }

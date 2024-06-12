@@ -20,8 +20,5 @@ public class BombFactory : Factory.IFactory<Bomb>, IGenericFactory
         return prefab.GetComponent<Bomb>();
     }
 
-    IPickable IGenericFactory.Create(Vector2 position, Quaternion rotation)
-    {
-        throw new System.NotImplementedException();
-    }
+    object IGenericFactory.Create(Vector2 position, Quaternion rotation) => Create(position, rotation);
 }

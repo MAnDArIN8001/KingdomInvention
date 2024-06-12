@@ -268,7 +268,7 @@ MonoBehaviour:
   _canAttack: 1
   _damage: 1
   _attackCooldown: 1
-  _attackRadius: 3
+  _attackRadius: 2
   _attackPosition: {fileID: 3826731004586716061}
 --- !u!114 &8889659080184546271
 MonoBehaviour:
