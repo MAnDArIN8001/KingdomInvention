@@ -1,36 +1,31 @@
 using Zenject;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class DiamondCounterUI : MonoBehaviour
 {
-    private int _currentDiamondCount;
-
     [SerializeField] private TMP_Text _counterText;
 
-    private DiamondPickEvent _pickEvent;
+    private DiamondPickedData _pickData;
 
     [Inject]
-    private void Initialize(DiamondPickEvent pickEvent)
+    private void Initialize(DiamondPickedData pickData)
     {
-        _pickEvent = pickEvent;
+        _pickData = pickData;
     }
 
     private void OnEnable()
     {
-        _pickEvent.OnDiamondPicked.AddListener(OnDiamondPickedHandler);
+        _pickData.OnDiamondsCountChanged += DiamondPickedHandler;
     }
 
     private void OnDisable()
     {
-        _pickEvent.OnDiamondPicked.RemoveListener(OnDiamondPickedHandler);
+        _pickData.OnDiamondsCountChanged -= DiamondPickedHandler;
     }
 
-    private void OnDiamondPickedHandler()
+    private void DiamondPickedHandler(int diamondCounts)
     {
-        _currentDiamondCount++;
-
-        _counterText.text = _currentDiamondCount.ToString();
+        _counterText.text = diamondCounts.ToString();
     }
 }

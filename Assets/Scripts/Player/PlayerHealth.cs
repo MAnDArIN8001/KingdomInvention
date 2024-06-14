@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour, IDamagable, IHealable
 {
     public event Action OnReciaveDamage;
-    public event Action OnDied;
     public event Action OnHealed;
+    public event Action OnDied;
 
     [SerializeField] private float _health;
     [SerializeField] private float _maxHealth;
@@ -36,7 +36,6 @@ public class PlayerHealth : MonoBehaviour, IDamagable, IHealable
         }
 
         _health = newHealth;
-
         OnHealed?.Invoke();
     }
 }

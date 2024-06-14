@@ -7,4 +7,9 @@ public class DiamondPickEvent : ScriptableObject
     public UnityEvent OnDiamondPicked;
 
     public void InvokeDiamondPick() => OnDiamondPicked?.Invoke();
+
+    private void OnDisable()
+    {
+        OnDiamondPicked.RemoveAllListeners();
+    }
 }

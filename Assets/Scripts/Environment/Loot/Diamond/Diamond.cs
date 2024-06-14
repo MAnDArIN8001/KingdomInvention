@@ -1,23 +1,17 @@
 using System;
 using UnityEngine;
-using Zenject;
 
 public class Diamond : MonoBehaviour, IPickable
 {
     public event Action OnDiamondPicked;
 
-    private DiamondPickEvent _diamondPicked;
+    [SerializeField] private int _diamondPrice;  
 
-    [Inject]
-    private void Initialize(DiamondPickEvent diamondPicked)
-    {
-        _diamondPicked = diamondPicked;
-    }
+    public int DiamondPrice => _diamondPrice; 
 
     public void PickUp(GameObject context)
     {
         OnDiamondPicked?.Invoke();
-        _diamondPicked.InvokeDiamondPick();
 
         Destroy(gameObject);
     }
